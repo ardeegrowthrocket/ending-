@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <withdrawhistory_adminhtml_withdrawhistory_index>
+	<reference name="content">
+	  <block type="withdrawhistory/adminhtml_withdrawhistory" name="withdrawhistory" />
+	</reference>
+  </withdrawhistory_adminhtml_withdrawhistory_index>
+</layout>

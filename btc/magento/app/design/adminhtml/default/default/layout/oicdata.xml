@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <oicdata_adminhtml_oicdata_index>
+	<reference name="content">
+	  <block type="oicdata/adminhtml_oicdata" name="oicdata" />
+	</reference>
+  </oicdata_adminhtml_oicdata_index>
+</layout>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Ardee_Btcusers>
+      <active>true</active>
+      <codePool>local</codePool>
+      <version>0.1.0</version>
+    </Ardee_Btcusers>
+  </modules>
+</config>

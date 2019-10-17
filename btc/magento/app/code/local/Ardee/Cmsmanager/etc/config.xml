@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Ardee_Cmsmanager>
+      <version>0.1.0</version>
+    </Ardee_Cmsmanager>
+  </modules>
+  <global>
+    <helpers>
+      <cmsmanager>
+        <class>Ardee_Cmsmanager_Helper</class>
+      </cmsmanager>
+    </helpers>
+	<blocks>
+	  <cmsmanager>
+		<class>Ardee_Cmsmanager_Block</class>
+	  </cmsmanager>
+	</blocks>
+	<models>
+	  <cmsmanager>
+		<class>Ardee_Cmsmanager_Model</class>
+		<resourceModel>cmsmanager_mysql4</resourceModel>
+	  </cmsmanager>
+	  <cmsmanager_mysql4>
+		<class>Ardee_Cmsmanager_Model_Mysql4</class>
+		<entities>		  
+			  <cmsmanager>
+				<table>cmsmanager</table>
+			  </cmsmanager>
+        </entities>
+	  </cmsmanager_mysql4>
+	</models>
+	<resources>
+	  <cmsmanager_setup>
+		<setup>
+		  <module>Ardee_Cmsmanager</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </cmsmanager_setup>
+	  <cmsmanager_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </cmsmanager_write>
+	  <cmsmanager_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </cmsmanager_read>
+	</resources>
+  </global>
+  <admin>
+	<routers>
+	  <cmsmanager>
+	    <use>admin</use>
+		<args>
+		  <module>Ardee_Cmsmanager</module>
+		  <frontName>admin_cmsmanager</frontName>
+		</args>
+	  </cmsmanager>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <cmsmanager module="cmsmanager">
+		<title>Front Site</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <cmsmanager module="cmsmanager">
+		    <title>Manage Contents/Pages</title>
+			<sort_order>0</sort_order>
+			<action>admin_cmsmanager/adminhtml_cmsmanager</action>
+		  </cmsmanager>
+		</children>
+	  </cmsmanager>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<cmsmanager translate="title" module="cmsmanager">
+			  <title>Cmsmanager</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <cmsmanager translate="title">
+			<title>Manage Cmsmanager</title>
+			<sort_order>0</sort_order>
+		  </cmsmanager>
+			  </children>
+			</cmsmanager>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<cmsmanager>
+		  <file>cmsmanager.xml</file>
+		</cmsmanager>
+	  </updates>
+	</layout>
+  </adminhtml>
+</config> 
